@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>The BJ Taylor Counseling and Cancer Center</title>
+    <meta name="author" content="The BJ Taylor Counseling and Cancer Center">
+    <meta name="description" content="Store front for The BJ Taylor Counseling and Cancer Center">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <style>
+        body {
+            margin-top: 0px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: blueviolet
+        }
+
+        #mainheader {
+            background-color: beige;
+        }
+
+        nav {
+            height: 60px;
+            width: 1000px;
+            margin: 0 auto 20px;
+        }
+
+        #leftmenu {
+            float: left;
+            width: 30%;
+            margin-bottom: 20px;
+        }
+
+        .searchbox {
+            padding: 5px;
+            margin: 10px 10px;
+            width: 200px;
+        }
+
+        #main {
+            float: right;
+            width: 70%;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            clear: both;
+            width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        div {
+            width: 75%;
+        }
+
+    </style>
+
+<body>
+    <header id="mainheader">
+        <nav>
+            <img src="images/BJT logo.png" height="1" width="55" />
+        </nav>
+    </header>
+    <div style="width: 1000px; margin-left: auto;margin-right: auto;">
+
+        <aside id="leftmenu">
+            <img src="images/BJT logo.png" height="250" />
+            <header>
+                <h4 style="text-align: center;">Our Site</h4>
+            </header>
+            <input type="search" class="searchbox" placeholder="Search our site" />
+        </aside>
+        <main id="main">
+           
+        </main>
+        <footer>
+            <p>Our address is</p>
+            <address>The BJ Taylor Counseling and Cancer Center - Burlington, KY</address>
+            </p>
+            <p><small>&copy; 2016 The BJ Taylor Counseling and Cancer Center - All rights reserved</small></p>
+            <p>Contact us via <a href="mailto:info@bethanyspieshop.com">email</a></p>
+            <p><small><a href="https://www.learningdojo.net">Created by Learning Dojo</a></small></p>
+        </footer>
+    </div>
+
+
+
+</body>
+
+</html>
