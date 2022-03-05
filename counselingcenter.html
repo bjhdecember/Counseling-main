@@ -80,7 +80,18 @@
                 purus sit amet dapibus efficitur, purus ex faucibus sem, sed iaculis diam lorem quis tellus. Nulla in nibh vulputate, volutpat eros 
                 ut, eleifend dui.<br><br>
                 <p>Download an application for counseling <a href="https://form.jotform.com/213195432290048">counseling application</a>  
-                </p> 
+                </p>
+
+                <p>
+                    <form method="POST" action="/api/single-file"
+                        enctype="multipart/form-data">
+
+                        <input type="file" name="myfile" id="myfile" style="display:none"><br>
+                        <button type="button" id="uploadButton">Upload Application</button>
+                        <div>Selected Filename: <span id="filename"></span> </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                </p>
             </p>
             </main>
             <footer class="clearfix">
@@ -112,6 +123,16 @@
                 <h3><small>&copy; 2016 The BJ Taylor Counseling and Cancer Center - All rights reserved</small></h3>
             </footer>
         <script src=".js/menuToggle.js"></script>
+        <script>
+            const fileTag = document.getElementById('myfile');
+            const filenameElem = document.getElementById('filename');
+            document.getElementById('uploadButton').addEventListener('click', () => {
+                fileTag.click();
+            });
+            fileTag.addEventListener('change', () => {
+                filenameElem.innerHTML = fileTag.files[0].name;
+            })
+        </script>
 
 
 

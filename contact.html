@@ -56,20 +56,22 @@
             <article></article>
         
                 <form action='thanks.html' method='get'></form>
-                <fieldset>
-                <legend>Contact Us</legend>
                 
-                <label> Name <span>(required)</span><input tabindex="1" type="text" name="nameminlength="10" maxlength="75""  class="text" required></label>
-            <br>
-            
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                <label> Email <span>(required)</span><input tabindex="2" type="email" name="email" placeholder=someone@gmail.com class="text" required></label>
-            <br>
-            <label class="feedback"> Your Feedback <textarea tabindex="3" cols="40" rows="3" class="feedbackBox" ></textarea></label>
-                <input tabindex="4" type="submit" value="Send" class="submitBtn"></input>
-                </fieldset>
-                
-                    
+                <form>
+                    <fieldset>
+                    <Legend style="font-size: 200%;">Contact Us</Legend>
+                    <label for="name">Name:</label>
+                    <input id="name" style="width: 55%;" type="text" required>
+                    <input id="submitname" type="submit" value="Click here">
+                    <label for="email">Email Address:</label>
+                    <input id="email" style="width: 55%;" type="text" required>
+                    <input id="submitemail" type="submit" value="Click here">
+                    <label for="Feedback">Enter Your Comments:</label>
+                    <input id="feedback" style="width: 75%; height: 10rem;" type="text" required>
+                    <input id="submitFeedback" type="submit" value="Click here">
+                    </fieldset>
+                </form>
+           
                 <footer class="clearfix">
                     <div class="row limited">
                         <section class="column small-12 medium-6 large-3">
