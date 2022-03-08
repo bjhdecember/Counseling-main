@@ -1,0 +1,23 @@
+[
+{
+    "id": 1,
+    "name": "Breast Cancer",
+    "Survival Rate Stage 1": 98,
+    "Suvival Rate Stage 2": 90,
+    "Survival Rate Stage 3": 66
+},
+{
+    "id": 2,
+    "name": "Ovarian Cancer",
+    "Survival Rate Stage 1":98, 
+    "Suvival Rate Stage 2": 70,
+    "Survival Rate Stage 3": 39
+},
+{
+    "id": 3,
+    "name": "Colon Cancer",
+    "Survival Rate Stage 1":95, 
+    "Suvival Rate Stage 2": 80,
+    "Survival Rate Stage 3": 40
+}
+]
