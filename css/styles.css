@@ -98,7 +98,7 @@ body{
     background-color:#ecdee4;
     content:"";
     position: absolute;
-    top: 10;
+    /* top: 10; */
     height: 250vh;
     width: 0vw;
     transition: all 100ms ease-in-out 300ms;
@@ -192,7 +192,7 @@ body{
 .round {
     max-width: 100%;
     height: auto;
-    float: center;
+    /* \float: center; */
     border: 6px solid purple;
     border-radius: 50%;
 }
@@ -540,7 +540,7 @@ span{
     
     .small-12{width: 100%;}
 
-    * grid rules*/
+    /* \grid rules */
     .row {clear: both;}
     .limited {
         max-width: 1200px;
@@ -895,7 +895,7 @@ figcaption{
 }
 
 form {
-    margin: 1rem gutter;
+    margin: 1rem;
     max-width: 25rem;
 
     } 
