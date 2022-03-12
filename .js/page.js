@@ -1,48 +1,48 @@
 // Charts
-let ctx = document.getElementById('monthlySales').getContext('2d');
-let pieCtx = document.getElementById('deptSales').getContext('2d');
-let yearlyLabel = document.getElementById('yearlyTotal');
+let ctx = document.getElementById('breastcancer').getContext('2d');
+let pieCtx = document.getElementById('ovariancancer').getContext('2d');
+let canceryearlyLabel = document.getElementById('cancersurvivalrate');
 
-let monthlySales = Array.of(500,9000,3000,4000);
-let monthlyLabels = Array.of('Oct','Nov','Dec');
+let breastcancer = Array.of(98,90,66);
+let breastCancerLabels = Array.of('1','2','3');
 
-let deptSales = Array.of(12,9,3);
-let deptLabels = Array.of('Hiking', 'Running', 'Hunting');
+let ovariancancer = Array.of(98,70,39);
+let ovarianCancerLabels = Array.of('1','2','3');
 
-let yearlyTotal = 0;
+let breastCancer = 0;
 
-function addYearlyTotal(x){
-	yearlyTotal = x + yearlyTotal;
+function addbreastcancer(x){
+	breastcancer = x + breastcancer;
 }
 
-monthlySales.forEach(addYearlyTotal);
+ovariancancer.forEach(addYearlyTotal);
 
-yearlyLabel.innerHTML = "$" + yearlyTotal;
+breastcancer.innerHTML = "rate" + breastcancer;
 
-let octNums = Array.of(1200,1000,9000);
-let novNums = Array.of(1100,2000,9000);
-let decNums = Array.of(4000,1000,5000);
+let stage1Nums = Array.of(98,98,95);
+let stage2Nums = Array.of(90,70,80);
+let stage3Nums = Array.of(95,80,40);
 
-// let total = Array.of(addYearlyTotal(...octNums), addYearlyTotal(...novNums), addYearlyTotal(...decNums));
+// let total = Array.of(addYearlyTotal(...stage1Nums), addbreastCancer(...stage2Nums), addbreastCancer(...stage3Nums));
 
-function findOver1000(){
-	let firstThousand = monthlySales.findIndex(element => element > 1000);
-	alert(firstThousand);
+function findOverninety(){
+	let firstninety = ovarianCancer.findIndex(element => element > 90);
+	alert(firstninety);
 }
 
 function resetNum(){
-	monthlySales.fill(0);
-	monthlySalesChart.update();
+	ovarianCancer.fill(0);
+	ovarianCancerChart.update();
 }
 
 // Bar
-var monthlySalesChart = new Chart(ctx, {
+var ovarianCancerChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: monthlyLabels,
+        labels: ['Stage 1', 'Stage 2', 'Stage 3'],
         datasets: [{
-            label: '# of Sales',
-            data: monthlySales,
+            label: 'stagesOfCancer',
+            data: [98, 70, 39],
             backgroundColor: [
                 'rgba(238, 184, 104, 1)',
                 'rgba(75, 166, 223, 1)',
