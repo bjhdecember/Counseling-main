@@ -114,7 +114,7 @@ router.put('/:id', function (req, res, next) {
 app.use('/api/', router);
 
 // Create server to listen port 5500
-var server = app.listen(5500, function () {
+var server = app.listen(5000, function () {
   console.log('Node server is running on http://localhost:5500..');
 });
 

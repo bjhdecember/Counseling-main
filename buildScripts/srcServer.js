@@ -8,15 +8,15 @@ var app = express();
 app.use(express.static('public'))
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, '../index.html'));
+    res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 app.listen(port, function (err) {
-    if (err) {
-        console.log(err);
-    } else {
-        open('http://localhost:' + port);
-    }
+    if (err) {
+        console.log(err);
+    } else {
+        open('http://localhost:' + port);
+    }
 })
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -25,7 +25,7 @@ var upload = multer();
 var app = express();
 
 app.get('/', function(req, res){
-   res.render('form');
+   res.render('form');
 });
 
 app.set('view engine', 'pug');
@@ -43,7 +43,7 @@ app.use(upload.array());
 app.use(express.static('public'));
 
 app.post('/', function(req, res){
-   console.log(req.body);
-   res.send("recieved your request!");
+   console.log(req.body);
+   res.send("recieved your request!");
 });
 app.listen(3000);
