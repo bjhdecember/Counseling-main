@@ -1,132 +1,49 @@
-// Bring in the express server and create application
-let express = require('express');
-let app = express();
-let chartRepo = require('./repos/chartRepo')
+var express = require("express");
+var path = require("path");
+var open = require("open");
 
-// use the express
-let router = express.Router();
+var port = 3000;
+var app = express();
 
-// Configure middleware to support JSON data parsing in request object
-app.use(express.json());
+app.use(express.static("public"));
 
-// Create Get to return a list of all charts
-router.get('/', function (req, res, next) {
-  chartRepo.get(function (data) {
-    res.status(200).json({
-      "status": 200,
-      "statusText": "OK",
-      "message": "All charts retrieved.",
-      "data": data
-    });
-  }, function(err) {
-    next(err);
-  });
-});
-// Create Get/search?id=n&name=str to search for charts by 'id' and/or 'name'
-router.get('/search', function (req, res, next) {
-  let searchObject = {
-    "id": req.query.id,
-    "name": req.query.name
-  };
-
-  chartRepo.search(searchObject, function (data) {
-    res.status(200).json({
-      "status": 200,
-      "statusText": "OK",
-      "message": "All charts retrieved.",
-      "data": data
-    });
-  }, function (err) {
-    next(err);
-  });
-})
-// Create GET/id it return a single chart
-router.get('/:id', function (req, res, next) {
-  chartRepo.getById(req.params.id, function (data) {
-    if (data) {
-      res.status(200).json({
-        "status": 200,
-        "statusText": "OK",
-        "message": "Single chart retrieved.",
-        "data": data
-      });
-    }
-    else {
-      res.status(404).json({
-        "status": 404,
-        "statusText": "Not Found",
-        "message": "The chart'" + req.params.id + "' could not be found.",
-        "error": {
-        "code": "NOT_FOUND",
-        "message": "The chart'" + req.params.id + "'could not be found."
-        }
-      });
-    }
-}, function(err) {
-  next(err);
-});
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "../index.html"));
 });
 
-router.post('/', function (req, res, next) {
-  chartRepo.insert(req.body, function(data) {
-    res.status().json({
-      "status": 201,
-      "statusText": "Created",
-      "message": "New Chart Added.",
-      "data": data
-    });
-  }, function(err) {
-    next(err);
-  });
-})
+app.listen(port, function (err) {
+  if (err) {
+    console.log(err);
+  } else {
+    open("http://localhost:" + port);
+  }
+});
+var express = require("express");
+var bodyParser = require("body-parser");
+var multer = require("multer");
+var upload = multer();
+var app = express();
 
-router.put('/:id', function (req, res, next) {
-  chartRepo.getById(req.params.id, function (data) {
-    if (data) {
-      // Attempt to update the data
-      chartRepo.update(req.body, req.params.id, function (data) {
-        res.status(200).json({
-          "status": 200,
-          "statusText": "OK",
-          "message": "Chart '" +  req.params.id + "' updated.",
-          "data": data
-        });
-      });
-    }
-    else {
-      res.status(404).json({
-        "status": 404,
-        "statusText": "Not Found",
-        "message": "The chart '" + req.params.id + "' could not be found.",
-        "error": {
-          "code": "NOT_FOUND",
-          "message": "The chart '" + req.params.id + "' could not be found."
-        }
-      });
-    }
-  }, function(err) {
-    next(err);
-  });
-})
-
-
-// Configure router so all routes are prefixed with /api/vl
-app.use('/api/', router);
-
-// Create server to listen port 5500
-var server = app.listen(5000, function () {
-  console.log('Node server is running on http://localhost:5500..');
+app.get("/", function (req, res) {
+  res.render("form");
 });
 
-//require('dotenv').config()
-//const express = require('express')
+app.set("view engine", "pug");
+app.set("views", "./views");
 
-//const server = express()
+// for parsing application/json
+app.use(bodyParser.json());
 
-//server.get('/hello', (req, res) => {
-  //res.json({ message: 'Hello from the Server' })
-//})
+// for parsing application/xwww-
+app.use(bodyParser.urlencoded({ extended: true }));
+//form-urlencoded
 
-//server.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}!`))
+// for parsing multipart/form-data
+app.use(upload.array());
+app.use(express.static("public"));
 
-
+app.post("/", function (req, res) {
+  console.log(req.body);
+  res.send("recieved your request!");
+});
+app.listen(3000);

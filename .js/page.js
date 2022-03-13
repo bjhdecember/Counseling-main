@@ -1,6 +1,6 @@
 // Charts
 const Chart = require('chart.js');
-const myChart = new Chart(ctx, {...});
+const myChart = new Chart(ctx,);
 
 
 let ctx = document.getElementById('myChart').getContext('2d');

@@ -4,9 +4,12 @@
 <head>
     <meta charset="utf-8">
     <title>The BJ Taylor Counseling and Cancer Center</title>
+   
     <meta name="author" content="The BJ Taylor Counseling and Cancer Center">
     <meta name="description" content="Store front for The BJ Taylor Counseling and Cancer Center">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/favicon-icon" href="/Counseling-main/favicon.ico">
+    
     <link href="css/styles.css" type="text/css" rel="stylesheet">
     <link href="public/normalize.css" type="text/css" rel="stylesheet">
     
@@ -56,10 +59,9 @@
         <main id="main">
             <article></article>
         
-                <form action='http://localhost:5500/api' method='get'></form>
                 
                 
-                <form action='http://localhost:5500/api' method = "POST">
+                <form method = "GET" action='http://localhost:5500/api'>
                     <fieldset>
                     <Legend style="font-size: 200%;">Contact Us</Legend>
                     <label for="name">Name:</label>
@@ -70,6 +72,7 @@
                     <input id="feedback" style="width: 75%; height: 10rem;" type="text" required>
                     <input id="submitFeedback" type="submit" value="submit">
                     </fieldset>
+                    
                 </form>
            
                 <footer class="clearfix">
