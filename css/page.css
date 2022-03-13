@@ -4,7 +4,7 @@
 }
 
 body{
-	background-color: #f1f3f3;
+	background-color: #f3f1f2;
 }
 
 /*Bottom Area*/
@@ -47,12 +47,12 @@ h4{
 
 .graphSec{
 	/* margin: 5px; */
-	box-shadow: 0 0 10px rgba(173, 176, 180, 0.3);
-	background-color: rgb(233, 37, 200);
+	box-shadow: 0 0 10px rgba(4, 49, 107, 0.3);
+	background-color: rgb(241, 232, 240);
 }
 
-.newSalesArea{
-	box-shadow: 0 0 10px rgba(173, 176, 180, 0.3);
+.addYourselfInTheSurvivalRate{
+	box-shadow: 0 0 10px rgba(29, 123, 247, 0.3);
 	background-color: #fff;
 }
 
@@ -67,7 +67,7 @@ h4{
 }
 
 .descText{
-	color: #a8a8a8;
+	color: #222020;
 	font-size: 1rem;
 }
 

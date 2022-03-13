@@ -14,6 +14,7 @@
     <link href="public/normalize.css" type="text/css" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     
+    
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
@@ -68,24 +69,7 @@
                 dui eu venenatis pulvinar. Etiam eget molestie ex, non tristique diam. Duis vitae ante rutrum, 
                 finibus arcu quis, feugiat nulla.</p> <br>
                 <p>
-                Nulla interdum dapibus erat ut fermentum. Phasellus luctus sem nunc, at ultrices leo varius at. 
-                Nulla scelerisque ex massa, sit amet pulvinar libero luctus a. Nullam nec commodo metus, et porta diam. 
-                Praesent tincidunt pellentesque molestie. Phasellus malesuada non arcu eu lobortis. Mauris vehicula 
-                bibendum ipsum eu malesuada. Fusce in justo suscipit, malesuada est non, eleifend arcu. Integer dignissim 
-                erat quis sapien maximus, eu dictum mi malesuada. Fusce tincidunt neque nec pulvinar elementum. Proin eu 
-                bibendum sapien.</p> <br>
-                <p>
-                Sed pretium dignissim ipsum, sit amet fringilla velit consectetur ut. Aenean sem velit, semper in luctus a, dapibus 
-                at purus. Duis sed nibh libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean sit amet molestie 
-                est, sit amet convallis magna. Pellentesque pellentesque, quam at cursus condimentum, enim diam suscipit orci, id sodales 
-                odio leo a ligula. Sed maximus augue sed malesuada laoreet.</p><br>
-                <p>
-                Suspendisse gravida imperdiet consectetur. Curabitur quam diam, eleifend in tellus ac, vulputate porttitor lacus. Vivamus mi 
-                orci, pretium quis semper porttitor, efficitur id libero. Suspendisse orci felis, consequat sit amet fringilla sit amet, 
-                scelerisque in erat. Aenean vehicula nulla sed vehicula ultricies. Nullam ultricies magna facilisis pulvinar vehicula. 
-                Nullam vestibulum, lorem ut vulputate tempus, dui augue pulvinar nibh, vitae placerat ligula eros ac velit. Phasellus condimentum, 
-                purus sit amet dapibus efficitur, purus ex faucibus sem, sed iaculis diam lorem quis tellus. Nulla in nibh vulputate, volutpat eros 
-                ut, eleifend dui. </p>
+                
             </p>
             
             <!-- Graph -->
@@ -99,7 +83,7 @@
 			<div class="col-12 w-100">
 				<div class="graphSec">
 					<h4 class="text-center pt-3">Breast Cancer</h4>
-					<h1 class="text-center pb-3 totalNum" id="Survival Rate"></h1>
+					<h1 class="text-center pb-3 totalNum" id="survivalRate"></h1>
 				</div>
 			</div>
 		</div>
@@ -109,13 +93,13 @@
 			<div class="col-12 col-md-6 w-100 mb-4 mb-md-0">
 				<div class="graphSec px-2">
 					<h4 class="text-center py-3">Ovarian Cancer</h4>
-					<canvas id="ovariancancer" width="400" height="300"></canvas>
+					<canvas id="myChart" width="400" height="300"></canvas>
 				</div>
 			</div>
 			<div class="col-12 col-md-6 w-100">
 				<div class="graphSec px-2">
 					<h4 class="text-center py-3">Colon Cancer</h4>
-					<canvas id="coloncancer" width="400" height="300"></canvas>
+					<canvas id="myChart" width="400" height="300"></canvas>
 				</div>
 			</div>
 		</div>
@@ -124,16 +108,14 @@
 	<!-- Recent Sales -->
 	<div class="container py-3">
 		<div class="d-flex flex-row justify-content-between pb-3">
-			<h3>Recent Sales</h3>
-			<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal" ><span class="oi oi-plus pr-2"></span>Add Sale</button>
-
-			<button type="button" class="btn btn-outline-success" onclick="findOver1000()"><span class="oi oi-plus pr-2"></span>Find Over $1000</button>
-
-			<button type="button" class="btn btn-outline-success" onclick="resetNum()"><span class="oi oi-plus pr-2"></span>Reset to 0</button>
+			<h3>Update Statistics</h3>
+			<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal" ><span class="oi oi-plus pr-2"></span>Add Stage Rate</button>
 
 		</div>
+        </div>
 
 		<!-- New Sales View -->
+        <canvas id="myChart" width="400" height="400"></canvas>
 		<div class="row newSalesArea mb-3">
 			<div class="col p-0">
 				<div class="list-group" id="productSales">
@@ -148,12 +130,48 @@
 			<div class="modal-dialog modal-lg" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">NEW SALE</h5>
+						<h5 class="modal-title" id="exampleModalLabel">ADD YOURSELF IN THE SURVIVAL RATE</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
+                        </div>
+                </div>
+                    </div>
 					</div>
-        </main>
+                    <div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label for="exampleInputEmail1"><small class="text-muted">Name:</small></label>
+								<input type="email" class="form-control" id="exampleInputEmail1"
+									aria-describedby="emailHelp" placeholder="Enter name">
+							</div>
+							<div  class="form-group">
+								<label for="typeOfCancer"><small class="text-muted">Type of Cancer:</small></label>
+								<input type="email" class="form-control" id="itemAmount" aria-describedby="emailHelp"
+									placeholder="Enter Type of Cancer">
+							</div>
+							<div class="form-group">
+								<input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Stage 1</label>
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+										id="inlineRadio1" value="option1">
+									<label class="form-check-label" for="inlineRadio1">Stage 2</label>
+									<input class="form-check-input" type="radio" name="inlineRadioOptions"
+										id="inlineRadio1" value="option1">
+									<label class="form-check-label" for="inlineRadio1">Stage 3</label>
+                                    <button id="btn">Toggle form visibility</button>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Add Stage Rate</button>
+                                    </div>
+								</div>
+							</div>
+						</form>
+					</div>   
+                    
+        </main class="main-contents">
+        
         <footer class="clearfix">
             <div class="row limited">
                 <section class="column small-12 medium-6 large-3">
@@ -179,12 +197,17 @@
     
     </section>
 </div>
-        
+        <div>
             <h3><small>&copy; 2016 The BJ Taylor Counseling and Cancer Center - All rights reserved</small></h3>
         </footer>
     </div>
 </div>
 <script src=".js/menuToggle.js"></script>
+<!-- Chart JS -->
+<script src="./node_modules/chart.js/dist/Chart.min.js"></script>>
+
+<!-- Page JS -->
+<script src="js/page.js"></script>
 
 </body>
 

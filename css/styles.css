@@ -934,3 +934,4 @@ footer {
     position: relative; 
     
 }
+.modal-body { display: none; }

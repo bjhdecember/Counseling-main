@@ -1,7 +1,16 @@
 // Charts
-let ctx = document.getElementById('breastcancer').getContext('2d');
-let pieCtx = document.getElementById('ovariancancer').getContext('2d');
+const Chart = require('chart.js');
+const myChart = new Chart(ctx, {...});
+
+
+let ctx = document.getElementById('myChart').getContext('2d');
+let pieCtx = document.getElementById('cancerSurvivalRates').getContext('2d');
 let canceryearlyLabel = document.getElementById('cancersurvivalrate');
+let breastCancerLabel = document.getElementById('breastCanter');
+
+let stage1Radio = document.getElementById('stage1');
+let stage2unningRadio = document.getElementById('stage2');
+let stage3Radio = document.getElementById('stage3');
 
 let breastcancer = Array.of(98,90,66);
 let breastCancerLabels = Array.of('1','2','3');
@@ -9,21 +18,32 @@ let breastCancerLabels = Array.of('1','2','3');
 let ovariancancer = Array.of(98,70,39);
 let ovarianCancerLabels = Array.of('1','2','3');
 
-let breastCancer = 0;
+let coloncancer = Array.of(98,70,39);
+let colonCancerLabels = Array.of('1','2','3');
 
-function addbreastcancer(x){
-	breastcancer = x + breastcancer;
+let Cancer = 0;
+
+function addYearlyTotal(x){
+	yearlyTotal.innerHTML = x + yearlyTotal;
 }
 
-ovariancancer.forEach(addYearlyTotal);
+function addbreastcancer(a,b,c){
+    return a+b+c;
+}
 
-breastcancer.innerHTML = "rate" + breastcancer;
+let breastCancer = addbreastcancer(...breastCancer);
+breastCancer.innerHTML = "Stages" + breastCancer;
+
+ovariancancer.forEach(addcancer);
+
+breastcancer.innerHTML = "stage" + breastcancer;
 
 let stage1Nums = Array.of(98,98,95);
 let stage2Nums = Array.of(90,70,80);
 let stage3Nums = Array.of(95,80,40);
 
-// let total = Array.of(addYearlyTotal(...stage1Nums), addbreastCancer(...stage2Nums), addbreastCancer(...stage3Nums));
+let total = Array.of(addbreastcancer(...stage1Nums), addbreastcancer(...stage2Nums), addbreastcancer(...stage3Nums));
+alert(total);
 
 function findOverninety(){
 	let firstninety = ovarianCancer.findIndex(element => element > 90);
@@ -36,13 +56,13 @@ function resetNum(){
 }
 
 // Bar
-var ovarianCancerChart = new Chart(ctx, {
+var cancerChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Stage 1', 'Stage 2', 'Stage 3'],
+        labels: ['stage1Nums', 'stage2Nums', 'stage3Nums'],
         datasets: [{
             label: 'stagesOfCancer',
-            data: [98, 70, 39],
+            data: ovariancancer, coloncancer,
             backgroundColor: [
                 'rgba(238, 184, 104, 1)',
                 'rgba(75, 166, 223, 1)',
@@ -63,13 +83,13 @@ var ovarianCancerChart = new Chart(ctx, {
 });
 
 // Pie
-var deptSalesChart = new Chart(pieCtx, {
+var cancerChart = new Chart(pieCtx, {
     type: 'pie',
     data: {
-        labels: deptLabels,
+        labels: ['stage1Nums', 'stage2Nums', 'stage3Nums'],
         datasets: [{
-            label: '# of Sales',
-            data: deptSales,
+            label: 'survival rates',
+            data: ovariancancer, colonCancer,
             backgroundColor: [
                 'rgba(238, 184, 104, 1)',
                 'rgba(75, 166, 223, 1)',
