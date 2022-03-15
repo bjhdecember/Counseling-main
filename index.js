@@ -2,7 +2,7 @@ var express = require("express");
 var path = require("path");
 var open = require("open");
 
-var port = 3000;
+var port = 5500;
 var app = express();
 
 app.use(express.static("public"));
@@ -18,11 +18,13 @@ app.listen(port, function (err) {
     open("http://localhost:" + port);
   }
 });
+
 var express = require("express");
 var bodyParser = require("body-parser");
 var multer = require("multer");
 var upload = multer();
 var app = express();
+
 
 app.get("/", function (req, res) {
   res.render("form");
@@ -46,4 +48,4 @@ app.post("/", function (req, res) {
   console.log(req.body);
   res.send("recieved your request!");
 });
-app.listen(3000);
+app.listen(5500);
