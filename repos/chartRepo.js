@@ -4,7 +4,7 @@ let fs = require("fs");
 const FILE_NAME = './assets/charts.json';
 
 let chartRepo = {
-    get: function (resolve, reject) {
+    post: function (resolve, reject) {
         fs.readFile(FILE_NAME, function (err, data) {
             if (err) {
 
@@ -14,7 +14,7 @@ let chartRepo = {
             }
         });
     },
-    getById: function (id, resolve, reject) {
+    postById: function (id, resolve, reject) {
         fs.readFile(FILE_NAME, function (err, data) {
             if (err) {
                 reject(err);

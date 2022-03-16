@@ -29,12 +29,12 @@ body{
 
 h3, h4{
 	font-weight: 200;
-	color: #424243;
+	color: #1a1a1b;
 	font-style:italic ;
 }
 
 h4{
-	color: #b8b8b8;
+	color: #333232;
 	font-weight: 200;
 	text-transform: uppercase;
 }
@@ -52,8 +52,8 @@ h4{
 }
 
 .addYourselfInTheSurvivalRate{
-	box-shadow: 0 0 10px rgba(29, 123, 247, 0.3);
-	background-color: #fff;
+	box-shadow: 0 0 10px rgba(37, 37, 37, 0.3);
+	background-color: rgb(31, 29, 29);
 }
 
 .list-group-item:first-child{
@@ -72,7 +72,7 @@ h4{
 }
 
 .modal-header{
-	background-color: #7a7c7f;
+	background-color: #292a2b;
 	color: #fff;
 	border-bottom: 0;
 	border-top-left-radius: 0;

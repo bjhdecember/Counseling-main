@@ -7,7 +7,7 @@ var app = express();
 
 app.use(express.static("public"));
 
-app.get("/", function (req, res) {
+app.post("/", function (req, res) {
   res.sendFile(path.join(__dirname, "../index.html"));
 });
 
@@ -26,7 +26,8 @@ var upload = multer();
 var app = express();
 
 
-app.get("/", function (req, res) {
+app.post("/", function (req, res) {
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
   res.render("form");
 });
 
@@ -48,4 +49,4 @@ app.post("/", function (req, res) {
   console.log(req.body);
   res.send("recieved your request!");
 });
-app.listen(5500);
+app.listen(5000);
