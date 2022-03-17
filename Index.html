@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/styles.css" type="text/css" rel="stylesheet">
     <link href="public/normalize.css" type="text/css" rel="stylesheet">
+    <link href="css/currentdate.css" type="text/css" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -43,30 +44,19 @@
                         <div class="three"></div>
                     </div>
                 </div>
-                <section class="countdown">
-                    <link href="css/countdown.css" rel="stylesheet">
+                
+                <section class="currentdate">
+                   
                     <div>
-                        <h2>Flying Pig Marathon</h2>
-                        <div class="countdown">
+                        <h2><p>Current Date and Time is <span id='date-time'></span>.</p></h2>
+                        <div class="countdowndate">
                             <div class="container-day">
-                                <h3 class="day">Time</h3>
-                                <h3>Day</h3>
+                                <h3 class="day"></h3>
+                                <h3></h3>
                             </div>
-                        <div class="countdown">
-                            <div class="container-hour">
-                                <h3 class="hour">Time</h3>
-                                <h3>Hour</h3>
-                        </div>
-                        <div class="countdown">
-                            <div class="container-minute">
-                                <h3 class="minute">Time</h3>
-                                <h3>Minute</h3>
-                        </div>
-                        <div class="countdown">
-                            <div class="container-second">
-                                <h3 class="second">Time</h3>
-                                <h3>Second</h3>
-                        </div>
+                        
+                        
+                        
                 <section>
                                     </div>
                                 </div>
@@ -185,8 +175,9 @@
             <h3><small>&copy; 2016 The BJ Taylor Counseling and Cancer Center - All rights reserved</small></h3>
         </footer>
 
-        <script src=".js/countdown.js"></script>
+        <script src=".js/currentdate.js" defer></script>
         <script src=".js/menuToggle.js" defer></script>
+      
 
 </body>
 

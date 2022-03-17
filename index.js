@@ -2,8 +2,8 @@ var express = require("express");
 var path = require("path");
 var open = require("open");
 var bodyParser = require("body-parser");
-var multer = require("multer");
-var upload = multer();
+
+
 
 var port = 5500;
 var app = express();
@@ -23,7 +23,7 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "../index.html"));
 });
 
-app.get("/api", function (req, res) {
+app.POST("/api", function (req, res) {
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
   res.render("form");
   console.log(req.body);
