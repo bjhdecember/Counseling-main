@@ -1,38 +1,12 @@
 var express = require("express");
 var path = require("path");
 var open = require("open");
-
-var port = 5500;
-var app = express();
-
-app.use(express.static("public"));
-
-app.post("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "../index.html"));
-});
-
-app.listen(port, function (err) {
-  if (err) {
-    console.log(err);
-  } else {
-    open("http://localhost:" + port);
-  }
-});
-
-var express = require("express");
 var bodyParser = require("body-parser");
 var multer = require("multer");
 var upload = multer();
+
+var port = 5500;
 var app = express();
-
-
-app.post("/", function (req, res) {
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.render("form");
-});
-
-app.set("view engine", "pug");
-app.set("views", "./views");
 
 // for parsing application/json
 app.use(bodyParser.json());
@@ -45,8 +19,21 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(upload.array());
 app.use(express.static("public"));
 
-app.post("/", function (req, res) {
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "../index.html"));
+});
+
+app.get("/api", function (req, res) {
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.render("form");
   console.log(req.body);
   res.send("recieved your request!");
 });
-app.listen(5000);
+
+app.listen(port, function (err) {
+  if (err) {
+    console.log(err);
+  } else {
+    open("http://localhost:" + port);
+  }
+});

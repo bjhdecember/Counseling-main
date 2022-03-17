@@ -1,0 +1,25 @@
+section {
+    font-family: "Lato", sans-serif;
+}
+.countdown {
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3rem;
+    justify-content: space-between;
+    
+}
+
+.day,.hour,.minute,.second {
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    text-align: center;
+    flex-direction:row;
+    justify-content: center;
+    padding: 3rem;
+    justify-content: space-between;
+}

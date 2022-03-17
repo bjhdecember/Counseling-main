@@ -7,7 +7,7 @@ var app = express();
 
 app.use(express.static("public"));
 
-app.post("/", function (req, res) {
+app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "../index.html"));
 });
 
@@ -24,9 +24,6 @@ var multer = require("multer");
 var upload = multer();
 var app = express();
 
-app.post("/", function (req, res) {
-    res.render("form");
-});
 
 app.set("view engine", "pug");
 app.set("views", "./views");
@@ -42,8 +39,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(upload.array());
 app.use(express.static("public"));
 
-app.post("/", function (req, res) {
+app.post("/api", function (req, res) {
     console.log(req.body);
     res.send("recieved your request!");
 });
-app.listen(5000);
+app.listen(5500);
