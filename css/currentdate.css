@@ -1,3 +1,11 @@
-p, span{
-    font-size: 2rem;
+p{
+font-size: 2rem;
+color: black;
+}
+.container-day{
+    background-color: rgb(187, 162, 192);
+    width: 35%;
+    height: 1%;
+    border-color: black;
+    text-align: center;
 }
