@@ -290,17 +290,6 @@ float: center;
     object-fit: cover;
 }
 
-fieldset{
-    border-color:purple;
-    border-width: 3px;
-    border-style: solid;
-    margin-bottom: 10%;
-    margin-top: 10%;
-    font-size: 120%;
-    max-width: 25rem;
-    flex-wrap: wrap;
-    
-}
 
 fieldset>legend{
     color: purple;
