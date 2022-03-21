@@ -31,7 +31,7 @@ options:{
 
 let myChart2 = document.getElementById('myChart2').getContext('2d');
 let OvarianCancerChart = new Chart(myChart2, {
-type: 'bar', //bar, horizontalBar, pie, line, doughnut radar
+type: 'line', //bar, horizontalBar, pie, line, doughnut radar
 data:{
     labels:['Stage 1', 'Stage 2', 'Stage 3'],
     datasets:[{
@@ -61,7 +61,7 @@ options:{
 
 let myChart3 = document.getElementById('myChart3').getContext('2d');
 let colonCancerChart = new Chart(myChart3, {
-type: 'bar', //bar, horizontalBar, pie, line, doughnut radar
+type: 'line', //bar, horizontalBar, pie, line, doughnut radar
 data:{
     labels:['Stage 1', 'Stage 2', 'Stage 3'],
     datasets:[{
