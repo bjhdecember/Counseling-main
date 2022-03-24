@@ -24,6 +24,18 @@ app.get("/contact", function (req, res) {
   res.sendFile(path.join(__dirname, "contact.html"));
 });
 
+app.get("/resources", function (req, res) {
+  res.sendFile(path.join(__dirname, "resources.html"));
+});
+
+app.get("/about", function (req, res) {
+  res.sendFile(path.join(__dirname, "about.html"));
+});
+
+app.get("/counselingcenter", function (req, res) {
+  res.sendFile(path.join(__dirname, "counselingcenter.html"));
+});
+
 app.post("/api", function (req, res) {
   fs.open('uploads/uploads', 'a', function(err, fd) {
   
