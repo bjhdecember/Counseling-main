@@ -551,7 +551,14 @@ span{
 
 @media only screen and (min-width: 300px) {
     figcaption{visibility: hidden;}
-    
+    nav img{
+        height: 30px;
+        width: 30px;
+        margin-right: 8%;
+        position:fixed; top:0; right:0;
+        margin-top: 6%;
+        position:absolute;
+    }
     p1{
         color: black;
         padding-top: 1rem;
