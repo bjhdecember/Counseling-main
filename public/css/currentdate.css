@@ -1,6 +1,7 @@
 p{
 font-size: 2rem;
 color: black;
+
 }
 .container-day{
     background-color: rgb(187, 162, 192);
@@ -8,4 +9,36 @@ color: black;
     height: 1%;
     border-color: black;
     text-align: center;
+}
+
+@media only screen and (min-width: 300px){
+    p{
+        font-size: 1rem;
+        color: black;
+        
+        }
+.container-day{
+    background-color: rgb(187, 162, 192);
+    width: 20%;
+    height: 1%;
+    border-color: black;
+    text-align: center;
+    flex-wrap: none;
+    flex-direction: column;
+}
+}
+@media only screen and (min-width: 1200px){
+    p{
+        font-size: 2rem;
+        color: black;
+        
+        }
+    .container-day{
+        background-color: rgb(187, 162, 192);
+        width: 35%;
+        height: 1%;
+        border-color: black;
+        text-align: center;
+        
+    }
 }
